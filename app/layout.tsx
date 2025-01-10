@@ -2,15 +2,20 @@ import '@mantine/core/styles.css';
 import { ColorSchemeScript, MantineProvider } from '@mantine/core';
 import type React from 'react';
 import { theme } from '../theme';
+import { QueryClientProvider, QueryClient } from '@tanstack/react-query';
 
 export const metadata = {
 	title: 'Mantine Next.js template',
 	description: 'I am using Mantine with Next.js!',
 };
 
+const queryClient = new QueryClient();
+
 export default function RootLayout({
 	children,
-}: { children: React.ReactNode }) {
+}: {
+	children: React.ReactNode;
+}) {
 	return (
 		<html lang="en">
 			<head>
@@ -22,7 +27,9 @@ export default function RootLayout({
 				/>
 			</head>
 			<body>
-				<MantineProvider theme={theme}>{children}</MantineProvider>
+				<QueryClientProvider client={queryClient}>
+					<MantineProvider theme={theme}>{children}</MantineProvider>
+				</QueryClientProvider>
 			</body>
 		</html>
 	);

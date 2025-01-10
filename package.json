@@ -14,6 +14,7 @@
     "@mantine/core": "7.15.3",
     "@mantine/hooks": "7.15.3",
     "@mantine/vanilla-extract": "7.15.3",
+    "@tanstack/react-query": "^5.63.0",
     "@vanilla-extract/css": "^1.15.3",
     "inversify": "^6.2.1",
     "mobx": "^6.13.5",
