@@ -1,7 +1,8 @@
 enum ExceptionType {
     ParsingResponseException = "ParsingResponseException",
     ResponseFormatException = "ResponseFormatException",
-    UnauthorizedException = "UnauthorizedException"
+    UnauthorizedException = "UnauthorizedException",
+    GeneralException = "GeneralException"
 }
 
 export default ExceptionType
