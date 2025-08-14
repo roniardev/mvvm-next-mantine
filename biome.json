@@ -1,55 +1,64 @@
 {
-	"$schema": "https://biomejs.dev/schemas/1.9.4/schema.json",
-	"vcs": {
-		"enabled": false,
-		"clientKind": "git",
-		"useIgnoreFile": false
-	},
-	"files": {
-		"ignoreUnknown": false,
-		"ignore": []
-	},
-	"formatter": {
-		"enabled": true
-	},
-	"organizeImports": {
-		"enabled": true
-	},
-	"linter": {
-		"enabled": true,
-		"rules": {
-			"recommended": true,
-			"correctness": {
-				"noUnusedFunctionParameters": {
-					"level": "warn",
-					"fix": "unsafe"
-				},
-				"noUnusedImports": {
-					"level": "warn",
-					"fix": "unsafe"
-				},
-				"noUnusedLabels": {
-					"level": "warn",
-					"fix": "unsafe"
-				},
-				"noUnusedPrivateClassMembers": {
-					"level": "warn",
-					"fix": "unsafe"
-				},
-				"noUnusedVariables": {
-					"level": "warn",
-					"fix": "unsafe"
-				}
-			}
-		}
-	},
-	"javascript": {
-		"formatter": {
-			"quoteStyle": "single",
-			"indentStyle": "tab",
-			"indentWidth": 4,
-			"lineWidth": 80,
-			"lineEnding": "lf"
-		}
-	}
+    "$schema": "https://biomejs.dev/schemas/1.9.4/schema.json",
+    "vcs": {
+        "enabled": true,
+        "clientKind": "git",
+        "useIgnoreFile": true
+    },
+    "files": {
+        "ignoreUnknown": false,
+        "ignore": []
+    },
+    "formatter": {
+        "enabled": true
+    },
+    "organizeImports": {
+        "enabled": true
+    },
+    "linter": {
+        "enabled": true,
+        "rules": {
+            "recommended": true,
+            "correctness": {
+                "noUnusedFunctionParameters": {
+                    "level": "warn",
+                    "fix": "unsafe"
+                },
+                "noUnusedImports": {
+                    "level": "warn",
+                    "fix": "unsafe"
+                },
+                "noUnusedLabels": {
+                    "level": "warn",
+                    "fix": "unsafe"
+                },
+                "noUnusedPrivateClassMembers": {
+                    "level": "warn",
+                    "fix": "unsafe"
+                },
+                "noUnusedVariables": {
+                    "level": "warn",
+                    "fix": "unsafe"
+                }
+            },
+            "suspicious": {
+                "noExplicitAny": "off"
+            },
+            "style": {
+                "noNonNullAssertion": "off"
+            }
+        }
+    },
+    "javascript": {
+        "formatter": {
+            "quoteStyle": "single",
+            "indentStyle": "tab",
+            "indentWidth": 4,
+            "lineWidth": 80,
+            "lineEnding": "lf"
+        },
+        "parser": {
+            "decorators": "true"
+        }
+    }
 }

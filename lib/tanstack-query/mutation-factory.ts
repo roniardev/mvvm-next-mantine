@@ -13,7 +13,7 @@ export class MutationFactory {
     options?: Omit<UseMutationOptions<TData, TError, TVariables>, 'mutationFn'>
   ) {
     return useMutation({
-        ...options
+      ...options
     })
   }
 }

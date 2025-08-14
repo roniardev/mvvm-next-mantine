@@ -9,7 +9,7 @@ export class QueryFactory {
   }
 
   createQuery<TData, TError = Error>(
-    key: [],
+    key: string[],
     queryFn: () => Promise<TData>,
     options?: Omit<UseQueryOptions<TData, TError>, 'queryKey' | 'queryFn'>
   ) {

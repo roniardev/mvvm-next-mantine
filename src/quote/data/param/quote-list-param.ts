@@ -19,7 +19,7 @@ export default class QuoteListParam {
     private page: number
     private limit: number
     private size?: string
-  
+
     constructor(param?: QuoteListParamProps) {
         this.q = param?.q ?? ""
         this.page = param?.page ?? 0
@@ -28,35 +28,35 @@ export default class QuoteListParam {
     }
 
     getQ = (): string | undefined => {
-        return this.q;
+        return this.q
     }
 
     setQ = (q?: string): void => {
-        this.q = q;
+        this.q = q
     }
 
     getPage = (): number => {
-        return this.page;
+        return this.page
     }
 
     setPage = (page: number): void => {
-        this.page = page;
+        this.page = page
     }
 
     getLimit = (): number => {
-        return this.limit;
+        return this.limit
     }
 
     setLimit = (limit: number): void => {
-        this.limit = limit;
+        this.limit = limit
     }
 
     getSize = (): string | undefined => {
-        return this.size;
+        return this.size
     }
 
     setSize = (size: string): void => {
-        this.size = size;
+        this.size = size
     }
 
     toJSON = () => {

@@ -63,6 +63,7 @@ export default class QuoteModel {
         }
     }
 
+
     stringifyJSON = (): string => {
         return JSON.stringify(this.toJSON())
     }

@@ -66,7 +66,6 @@ export default class CustomResponse<E = undefined> {
 
     static eitherResponse = async <T, U>(param: FromResponseProps<T, U>): Promise<EitherProps<T, U>> => {
         const result = await param.response.json()
-
         if (!this.checkResponse(result)) {
             throw new ResponseFormatException(JSON.stringify(result))
         }
