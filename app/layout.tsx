@@ -1,11 +1,11 @@
 "use client"
 
 import "@mantine/core/styles.css"
+import "mantine-datatable/styles.css"
 import '@mantine/notifications/styles.css'
-import "mantine-datatable/styles.layer.css"
 import "./layout.css"
 
-import { Geist } from 'next/font/google'
+import { Archivo } from 'next/font/google'
 import { MantineProvider } from "@mantine/core"
 import { Notifications } from '@mantine/notifications'
 import type React from "react"
@@ -14,7 +14,7 @@ import { QueryClientProvider, QueryClient } from "@tanstack/react-query"
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools"
 import { QueryClientManager } from "@/lib/tanstack-query/query-client-manager"
 
-const font = Geist({
+const font = Archivo({
     subsets: ['latin'],
     weight: ['400', '500', '600', '700'],
 })
