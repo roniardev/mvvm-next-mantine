@@ -10,30 +10,30 @@ import { Icon } from "@iconify/react"
 
 
 const Page = () => {
-	const { data: quotesData, isLoading, error } = quoteVM.useQuoteListQuery()
+    const { data: quotesData, isLoading, error } = quoteVM.useQuoteListQuery()
 
-	useEffect(() => {
-		if (error) {
-			notifications.show({
-				icon: <Icon icon="line-md:alert-twotone" />,
-				message: error.getException().message,
-				color: 'red',
-				autoClose: 5000,
-				radius: 'lg',
-				withBorder: true,
-				position: 'top-right',
-			})
-		}
-	}, [error])
+    useEffect(() => {
+        if (error) {
+            notifications.show({
+                icon: <Icon icon="line-md:alert-twotone" />,
+                message: error.getException().message,
+                color: 'red',
+                autoClose: 5000,
+                radius: 'lg',
+                withBorder: true,
+                position: 'top-right',
+            })
+        }
+    }, [error])
 
-	return (
-		<Flex direction="column" gap="lg" justify="center" align="center">
-			<ColorSchemeToggle />
-			<Flex w="50rem">
-				<QuotesTable quotes={quotesData?.getData() ?? []} isLoading={isLoading} />
-			</Flex>
-		</Flex>
-	)
+    return (
+        <Flex direction="column" gap="lg" justify="center" align="center">
+            <ColorSchemeToggle />
+            <Flex w="50rem">
+                <QuotesTable quotes={quotesData?.getData() ?? []} isLoading={isLoading} />
+            </Flex>
+        </Flex>
+    )
 }
 
 export default Page

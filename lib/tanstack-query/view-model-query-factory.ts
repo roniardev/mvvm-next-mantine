@@ -124,12 +124,12 @@ export class ViewModelQueryFactory {
                     throw error as TError
                 }
             },
-            onSuccess: async (data, variables, context) => {
+            onSuccess: async (data, variables, onMutateResult, context) => {
                 await this.invalidateKeys(config.invalidateKeys, data, variables)
-                await options?.onSuccess?.(data, variables, context)
+                await options?.onSuccess?.(data, variables, onMutateResult, context)
             },
-            onError: async (error, variables, context) => {
-                await options?.onError?.(error, variables, context)
+            onError: async (error, variables, onMutateResult, context) => {
+                await options?.onError?.(error, variables, onMutateResult, context)
             },
         })
     }
