@@ -1,20 +1,17 @@
-import { createVanillaExtractPlugin } from "@vanilla-extract/next-plugin";
-import path from "path";
+import { createVanillaExtractPlugin } from "@vanilla-extract/next-plugin"
+import type { NextConfig } from "next"
+import path from "path"
 
-const withVanillaExtract = createVanillaExtractPlugin();
+const withVanillaExtract = createVanillaExtractPlugin()
 
-/** @type {import('next').NextConfig} */
-const nextConfig = {
-  reactStrictMode: false,
-  eslint: {
-    ignoreDuringBuilds: true,
-  },
-  turbopack: {
-    resolveExtensions: [".ts", ".tsx", ".js", ".jsx", ".json", ".mjs", ".cjs"],
-    resolveAlias: {
-      "@": path.resolve(__dirname, "src"),
-    },
-  }
-};
+const nextConfig: NextConfig = {
+    reactStrictMode: false,
+    turbopack: {
+        resolveExtensions: [".ts", ".tsx", ".js", ".jsx", ".json", ".mjs", ".cjs"],
+        resolveAlias: {
+            "@": path.resolve(__dirname, "src"),
+        },
+    }
+}
 
-export default withVanillaExtract(nextConfig);
+export default withVanillaExtract(nextConfig)
