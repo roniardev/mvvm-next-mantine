@@ -1,0 +1,9 @@
+[2026-03-28T17:21:51.274Z] [INFO] QuoteListViewModel > constructor: ViewModel initialized {
+  "service": "mvvm-next-mantine",
+  "path": "QuoteListViewModel > constructor"
+}
+[2026-03-28T17:21:51.230Z] [INFO] QuoteListViewModel > useQuoteListQuery: Starting quote list query {
+  "service": "mvvm-next-mantine",
+  "path": "QuoteListViewModel > useQuoteListQuery",
+  "serializedParam": "{\"q\":\"\",\"page\":0,\"limit\":20,\"size\":\"\"}"
+}

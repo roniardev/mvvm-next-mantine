@@ -22,8 +22,6 @@
     "clsx": "^2.1.1",
     "inversify": "^6.2.1",
     "mantine-datatable": "^8.2.0",
-    "mobx": "^6.13.5",
-    "mobx-react-lite": "^4.1.0",
     "next": "^15.4.6",
     "react": "19.0.0",
     "react-dom": "19.0.0",
@@ -31,7 +29,8 @@
     "react-query-devtools": "^2.6.3",
     "reflect-metadata": "^0.2.2",
     "winston": "^3.17.0",
-    "winston-daily-rotate-file": "^5.0.0"
+    "winston-daily-rotate-file": "^5.0.0",
+    "zustand": "^5.0.12"
   },
   "devDependencies": {
     "@biomejs/biome": "^1.9.4",

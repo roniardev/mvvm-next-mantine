@@ -14,17 +14,21 @@ export type QuoteListParamProps = {
     size?: string
 }
 
+type QuoteListParamListener = (param: QuoteListParam) => void
+
 export default class QuoteListParam {
     private q?: string
     private page: number
     private limit: number
     private size?: string
+    private listeners: Set<QuoteListParamListener>
 
     constructor(param?: QuoteListParamProps) {
         this.q = param?.q ?? ""
         this.page = param?.page ?? 0
         this.limit = param?.limit ?? 20
         this.size = param?.size ?? ""
+        this.listeners = new Set()
     }
 
     getQ = (): string | undefined => {
@@ -33,6 +37,7 @@ export default class QuoteListParam {
 
     setQ = (q?: string): void => {
         this.q = q
+        this.notifyListeners()
     }
 
     getPage = (): number => {
@@ -41,6 +46,7 @@ export default class QuoteListParam {
 
     setPage = (page: number): void => {
         this.page = page
+        this.notifyListeners()
     }
 
     getLimit = (): number => {
@@ -49,6 +55,7 @@ export default class QuoteListParam {
 
     setLimit = (limit: number): void => {
         this.limit = limit
+        this.notifyListeners()
     }
 
     getSize = (): string | undefined => {
@@ -57,6 +64,15 @@ export default class QuoteListParam {
 
     setSize = (size: string): void => {
         this.size = size
+        this.notifyListeners()
+    }
+
+    subscribe = (listener: QuoteListParamListener): (() => void) => {
+        this.listeners.add(listener)
+
+        return () => {
+            this.listeners.delete(listener)
+        }
     }
 
     toJSON = () => {
@@ -95,6 +111,12 @@ export default class QuoteListParam {
             page: param.page,
             limit: param.limit,
             size: param.size,
+        })
+    }
+
+    private notifyListeners = (): void => {
+        this.listeners.forEach((listener) => {
+            listener(this)
         })
     }
 }

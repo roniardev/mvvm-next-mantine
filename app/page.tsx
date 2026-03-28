@@ -1,16 +1,15 @@
 'use client'
 
-import { Flex, Alert } from '@mantine/core'
-import { observer } from 'mobx-react-lite'
+import { Flex } from '@mantine/core'
 import { ColorSchemeToggle } from '../components/color-scheme-toggle'
 import { quoteVM } from '../injector/injector'
 import { QuotesTable } from '@/components/quote/quotes-table'
 import { notifications } from '@mantine/notifications'
 import { useEffect } from 'react'
-import { Icon } from "@iconify/react";
+import { Icon } from "@iconify/react"
 
 
-const Page = observer(() => {
+const Page = () => {
 	const { data: quotesData, isLoading, error } = quoteVM.useQuoteListQuery()
 
 	useEffect(() => {
@@ -35,6 +34,6 @@ const Page = observer(() => {
 			</Flex>
 		</Flex>
 	)
-})
+}
 
 export default Page

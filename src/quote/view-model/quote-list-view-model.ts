@@ -1,6 +1,7 @@
 import { inject, injectable } from "inversify"
-import { makeAutoObservable } from "mobx"
-import type { UseQueryResult, UseMutationResult } from "@tanstack/react-query"
+import type { UseMutationResult, UseQueryResult } from "@tanstack/react-query"
+import { useStore } from "zustand"
+import { createStore, type StoreApi } from "zustand/vanilla"
 
 import FetchParam from "@/common/params/fetch-param"
 import QuoteListParam from "@/src/quote/data/param/quote-list-param"
@@ -11,11 +12,15 @@ import { QueryFactory } from "@/lib/tanstack-query/query-factory"
 import { QueryClientManager } from "@/lib/tanstack-query/query-client-manager"
 import { MutationFactory } from "@/lib/tanstack-query/mutation-factory"
 import { quoteQueryKeys } from "@/lib/tanstack-query/query-keys"
-import Either, { type EitherProps } from "@/utils/either"
+import Either from "@/utils/either"
 import PaginationModel from "@/common/models/pagination"
 import QuoteModel from "@/src/quote/data/model/quote-model"
 import ErrorModel from "@/common/models/error-model"
 import { ErrorValidationProps } from "@/common/models/error-validation"
+
+type QuoteListViewModelState = {
+    paramVersion: number
+}
 
 export interface IQuoteListViewModel {
     getParam: () => QuoteListParam
@@ -31,6 +36,7 @@ export class QuoteListViewModel implements IQuoteListViewModel {
     private queryFactory: QueryFactory
     private queryClientManager: QueryClientManager
     private mutationFactory: MutationFactory
+    private paramStore: StoreApi<QuoteListViewModelState>
 
     constructor(
         @inject(QuoteType.QuoteRepository) quoteRepository: IQuoteRepository,
@@ -43,8 +49,11 @@ export class QuoteListViewModel implements IQuoteListViewModel {
         this.param = new QuoteListParam()
         this.queryFactory = new QueryFactory(queryClientManager)
         this.mutationFactory = new MutationFactory(queryClientManager)
+        this.paramStore = createStore<QuoteListViewModelState>(() => ({
+            paramVersion: 0,
+        }))
+        this.param.subscribe(this.handleParamChange)
 
-        makeAutoObservable(this)
         this.logger.info("QuoteListViewModel > constructor: ViewModel initialized", {
             path: "QuoteListViewModel > constructor"
         })
@@ -53,9 +62,11 @@ export class QuoteListViewModel implements IQuoteListViewModel {
     getParam = (): QuoteListParam => this.param
 
     useQuoteListQuery = (): UseQueryResult<PaginationModel<QuoteModel>, ErrorModel<string | ErrorValidationProps[]>> => {
+        this.useParamVersion()
+
         const path = "QuoteListViewModel > useQuoteListQuery"
         const data = this.getParam()
-        const serializedParam: string = data ? data.toRequestBody() : ''
+        const serializedParam: string = data ? data.toRequestBody() : ""
 
         this.logger.info(`${path}: Starting quote list query`, {
             path,
@@ -181,5 +192,15 @@ export class QuoteListViewModel implements IQuoteListViewModel {
             stack: error.stack
         })
         return error.message || 'Terjadi kesalahan saat mengambil data quotes'
+    }
+
+    private useParamVersion = (): number => {
+        return useStore(this.paramStore, (state) => state.paramVersion)
+    }
+
+    private handleParamChange = (): void => {
+        this.paramStore.setState((state) => ({
+            paramVersion: state.paramVersion + 1,
+        }))
     }
 }
