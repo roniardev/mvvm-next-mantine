@@ -21,14 +21,6 @@ class ServerLogger implements LoggerInterface {
                 const path = await import("path")
                 const DailyRotateFile = await import("winston-daily-rotate-file")
 
-                const logFormat = winston.default.format.combine(
-                    winston.default.format.timestamp({
-                        format: "MM-DD-YYYY HH:mm:ss"
-                    }),
-                    winston.default.format.errors({ stack: true }),
-                    winston.default.format.json()
-                )
-
                 const dailyRotateFormat = winston.default.format.combine(
                     winston.default.format.timestamp(),
                     winston.default.format.errors({ stack: true }),

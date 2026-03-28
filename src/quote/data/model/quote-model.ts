@@ -1,4 +1,8 @@
-import ParsingResponseException from "@/utils/exceptions/parsing-response-exception"
+import EffectMessage from "@/common/constants/message/effect"
+import EffectPath from "@/common/constants/path/effect"
+import { ModelDecoder, ModelField } from "@/lib/effect/model-decoder"
+import type ParsingResponseException from "@/utils/exceptions/parsing-response-exception"
+import { Effect } from "effect"
 
 export type QuoteResponseProps = {
     id: number
@@ -16,6 +20,21 @@ export default class QuoteModel {
     private id: number
     private quote: string
     private author: string
+    private static readonly fields = {
+        id: ModelField.number(EffectMessage.INVALID_QUOTE_MODEL_ID),
+        quote: ModelField.string(EffectMessage.INVALID_QUOTE_MODEL_QUOTE),
+        author: ModelField.string(EffectMessage.INVALID_QUOTE_MODEL_AUTHOR),
+    }
+    private static readonly fromResponseDecoder = new ModelDecoder<QuoteModelProps, QuoteModel>({
+        path: EffectPath.QUOTE_MODEL_FROM_RESPONSE,
+        fields: QuoteModel.fields,
+        build: (payload) => new QuoteModel(payload),
+    })
+    private static readonly parseDecoder = new ModelDecoder<QuoteModelProps, QuoteModel>({
+        path: EffectPath.QUOTE_MODEL_PARSE,
+        fields: QuoteModel.fields,
+        build: (payload) => new QuoteModel(payload),
+    })
 
     constructor(param: QuoteModelProps) {
         this.id = param.id
@@ -32,19 +51,17 @@ export default class QuoteModel {
             return []
         }
 
-        return response.map((item) => this.fromResponse(item))
+        return this.fromResponseDecoder.decodeList(response)
     }
 
     static fromResponse = (response: QuoteResponseProps): QuoteModel => {
-        try {
-            return new QuoteModel({
-                id: response.id,
-                quote: response.quote,
-                author: response.author
-            })
-        } catch (error) {
-            throw new ParsingResponseException(error)
-        }
+        return this.fromResponseDecoder.decode(response)
+    }
+
+    static fromResponseEffect = (
+        response: QuoteResponseProps
+    ): Effect.Effect<QuoteModel, ParsingResponseException, never> => {
+        return this.fromResponseDecoder.decodeEffect(response)
     }
 
     toJSON = (): QuoteModelProps => {
@@ -60,11 +77,17 @@ export default class QuoteModel {
         return JSON.stringify(this.toJSON())
     }
 
-    static parse = (param: QuoteModelProps) => {
-        return new QuoteModel(param)
+    static parse = (param: QuoteModelProps): QuoteModel => {
+        return this.parseDecoder.decode(param)
     }
 
-    static parseList = (params: QuoteModelProps[]) => {
-        return params.map((param) => this.parse(param))
+    static parseEffect = (
+        param: QuoteModelProps
+    ): Effect.Effect<QuoteModel, ParsingResponseException, never> => {
+        return this.parseDecoder.decodeEffect(param)
+    }
+
+    static parseList = (params: QuoteModelProps[]): QuoteModel[] => {
+        return this.parseDecoder.decodeList(params)
     }
 }

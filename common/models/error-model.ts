@@ -1,3 +1,4 @@
+import Message from "@/common/constants/message"
 import ExceptionType from "@/utils/exceptions"
 import GeneralException from "@/utils/exceptions/general-exception"
 import ParsingResponseException from "@/utils/exceptions/parsing-response-exception"
@@ -98,5 +99,50 @@ export default class ErrorModel<E> {
             exception: exception,
             data: param.data,
         })
+    }
+
+    static getExceptionMessage = (param: unknown): string => {
+        if (param instanceof ErrorModel) {
+            const message = param.getException().message
+
+            if (message) {
+                return message
+            }
+
+            return Message.DEFAULT_ERROR
+        }
+
+        if (typeof param === "object" && param !== null && this.isValidJSON(param as object)) {
+            const errorModel = this.parse(param as ErrorModelJSONProps<unknown>)
+            const message = errorModel.getException().message
+
+            if (message) {
+                return message
+            }
+
+            return Message.DEFAULT_ERROR
+        }
+
+        if (param instanceof Error) {
+            if (param.message) {
+                return param.message
+            }
+
+            return Message.DEFAULT_ERROR
+        }
+
+        if (typeof param === "object" && param !== null && "message" in param) {
+            const message = param.message
+
+            if (typeof message === "string" && message) {
+                return message
+            }
+        }
+
+        if (typeof param === "string" && param) {
+            return param
+        }
+
+        return Message.DEFAULT_ERROR
     }
 }

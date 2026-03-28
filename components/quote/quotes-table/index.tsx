@@ -1,5 +1,5 @@
-'use client';
-import { Box, Flex, Skeleton, Text } from '@mantine/core'
+'use client'
+import { Flex, Skeleton, Text } from '@mantine/core'
 import { DataTable } from 'mantine-datatable'
 import QuoteModel from '@/src/quote/data/model/quote-model'
 

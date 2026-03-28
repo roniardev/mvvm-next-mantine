@@ -1,7 +1,3 @@
-export const HomeType = {
-    HomeViewModel: Symbol.for("HomeViewModel"),
-}
-
 export const QuoteType = {
     QuoteRepository: Symbol.for("QuoteRepository"),
     GetQuoteListRemote: Symbol.for("GetQuoteListRemote"),

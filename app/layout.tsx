@@ -10,7 +10,7 @@ import { MantineProvider } from "@mantine/core"
 import { Notifications } from '@mantine/notifications'
 import type React from "react"
 import { theme } from "../theme"
-import { QueryClientProvider, QueryClient } from "@tanstack/react-query"
+import { QueryClientProvider } from "@tanstack/react-query"
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools"
 import { QueryClientManager } from "@/lib/tanstack-query/query-client-manager"
 

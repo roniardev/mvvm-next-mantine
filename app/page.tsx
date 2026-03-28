@@ -7,6 +7,7 @@ import { QuotesTable } from '@/components/quote/quotes-table'
 import { notifications } from '@mantine/notifications'
 import { useEffect } from 'react'
 import { Icon } from "@iconify/react"
+import ErrorModel from '@/common/models/error-model'
 
 
 const Page = () => {
@@ -16,7 +17,7 @@ const Page = () => {
         if (error) {
             notifications.show({
                 icon: <Icon icon="line-md:alert-twotone" />,
-                message: error.getException().message,
+                message: ErrorModel.getExceptionMessage(error),
                 color: 'red',
                 autoClose: 5000,
                 radius: 'lg',
