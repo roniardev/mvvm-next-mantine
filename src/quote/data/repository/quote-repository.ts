@@ -53,11 +53,11 @@ export class QuoteRepository implements IQuoteRepository {
             }
 
             const error = parsedResponse as ErrorModelJSONProps<any>
-            const errorModel = ErrorModel.parse(error).unshiftPath("QuoteRepository > queryQuoteList")
+            const errorModel = ErrorModel.parse(error).unshiftPath("QuoteRepository:queryQuoteList")
             return Either.Left(errorModel)
         } catch (error) {
             const errorModel = new ErrorModel({
-                path: "QuoteRepository > queryQuoteList",
+                path: "QuoteRepository:queryQuoteList",
                 exception: error instanceof Error ? error : new Error(String(error)),
                 data: "Internal error occurred while fetching quote list"
             })
