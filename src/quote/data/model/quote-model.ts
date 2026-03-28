@@ -23,17 +23,9 @@ export default class QuoteModel {
         this.author = param.author
     }
 
-    getId = (): number => {
-        return this.id
-    }
-
-    getQuote = (): string => {
-        return this.quote
-    }
-
-    getAuthor = (): string => {
-        return this.author
-    }
+    getId = (): number => this.id
+    getQuote = (): string => this.quote
+    getAuthor = (): string => this.author
 
     static fromListResponse = (response: QuoteResponseProps[]): QuoteModel[] => {
         if (!response) {
@@ -69,11 +61,7 @@ export default class QuoteModel {
     }
 
     static parse = (param: QuoteModelProps) => {
-        return new QuoteModel({
-            id: param.id,
-            quote: param.quote,
-            author: param.author
-        })
+        return new QuoteModel(param)
     }
 
     static parseList = (params: QuoteModelProps[]) => {

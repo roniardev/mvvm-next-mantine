@@ -11,4 +11,5 @@ export const QuoteType = {
 
 export const GeneralType = {
     QueryClientManager: Symbol.for("QueryClientManager"),
+    Logger: Symbol.for("Logger"),
 }

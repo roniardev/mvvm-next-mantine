@@ -7,11 +7,13 @@ import { getQuoteListRemote, addQuoteRemote } from "@/src/quote/data/source/quot
 import { QueryClientManager } from "@/lib/tanstack-query/query-client-manager";
 import QuoteModel from "@/src/quote/data/model/quote-model"
 import { QuoteRepository } from "@/src/quote/data/repository/quote-repository"
+import Logger from "@/utils/logger"
 
 const container = new Container();
 
 // Register common services
 container.bind(GeneralType.QueryClientManager).to(QueryClientManager).inSingletonScope();
+container.bind(GeneralType.Logger).to(Logger).inSingletonScope();
 
 // Register repositories
 container.bind(QuoteType.QuoteRepository).to(QuoteRepository).inSingletonScope();

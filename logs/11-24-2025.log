@@ -1,0 +1,107 @@
+[2025-11-24T04:12:29.141Z] [INFO] QuoteListViewModel > constructor: ViewModel initialized {
+  "service": "mvvm-next-mantine",
+  "path": "QuoteListViewModel > constructor"
+}
+[2025-11-24T04:12:29.091Z] [INFO] QuoteListViewModel > useQuoteListQuery: Starting quote list query {
+  "service": "mvvm-next-mantine",
+  "path": "QuoteListViewModel > useQuoteListQuery",
+  "serializedParam": "{\"q\":\"\",\"page\":0,\"limit\":20,\"size\":\"\"}"
+}
+[2025-11-24T04:12:29.663Z] [INFO] QuoteListViewModel > useQuoteListQuery: Starting quote list query {
+  "service": "mvvm-next-mantine",
+  "path": "QuoteListViewModel > useQuoteListQuery",
+  "serializedParam": "{\"q\":\"\",\"page\":0,\"limit\":20,\"size\":\"\"}"
+}
+[2025-11-24T04:12:30.101Z] [INFO] QuoteListViewModel > useQuoteListQuery: Starting quote list query {
+  "service": "mvvm-next-mantine",
+  "path": "QuoteListViewModel > useQuoteListQuery",
+  "serializedParam": "{\"q\":\"\",\"page\":0,\"limit\":20,\"size\":\"\"}"
+}
+[2025-11-24T04:13:49.259Z] [INFO] QuoteListViewModel > constructor: ViewModel initialized {
+  "service": "mvvm-next-mantine",
+  "path": "QuoteListViewModel > constructor"
+}
+[2025-11-24T04:13:49.213Z] [INFO] QuoteListViewModel > useQuoteListQuery: Starting quote list query {
+  "service": "mvvm-next-mantine",
+  "path": "QuoteListViewModel > useQuoteListQuery",
+  "serializedParam": "{\"q\":\"\",\"page\":0,\"limit\":20,\"size\":\"\"}"
+}
+[2025-11-24T04:13:49.311Z] [INFO] QuoteListViewModel > useQuoteListQuery: Starting quote list query {
+  "service": "mvvm-next-mantine",
+  "path": "QuoteListViewModel > useQuoteListQuery",
+  "serializedParam": "{\"q\":\"\",\"page\":0,\"limit\":20,\"size\":\"\"}"
+}
+[2025-11-24T04:13:49.330Z] [INFO] QuoteListViewModel > useQuoteListQuery: Starting quote list query {
+  "service": "mvvm-next-mantine",
+  "path": "QuoteListViewModel > useQuoteListQuery",
+  "serializedParam": "{\"q\":\"\",\"page\":0,\"limit\":20,\"size\":\"\"}"
+}
+[2025-11-24T04:13:50.160Z] [INFO] QuoteListViewModel > useQuoteListQuery: Starting quote list query {
+  "service": "mvvm-next-mantine",
+  "path": "QuoteListViewModel > useQuoteListQuery",
+  "serializedParam": "{\"q\":\"\",\"page\":0,\"limit\":20,\"size\":\"\"}"
+}
+[2025-11-24T04:14:07.812Z] [INFO] QuoteListViewModel > useQuoteListQuery: Starting quote list query {
+  "service": "mvvm-next-mantine",
+  "path": "QuoteListViewModel > useQuoteListQuery",
+  "serializedParam": "{\"q\":\"\",\"page\":0,\"limit\":20,\"size\":\"\"}"
+}
+[2025-11-24T04:14:09.426Z] [INFO] QuoteListViewModel > useQuoteListQuery: Starting quote list query {
+  "service": "mvvm-next-mantine",
+  "path": "QuoteListViewModel > useQuoteListQuery",
+  "serializedParam": "{\"q\":\"\",\"page\":0,\"limit\":20,\"size\":\"\"}"
+}
+[2025-11-24T04:14:10.927Z] [INFO] QuoteListViewModel > useQuoteListQuery: Starting quote list query {
+  "service": "mvvm-next-mantine",
+  "path": "QuoteListViewModel > useQuoteListQuery",
+  "serializedParam": "{\"q\":\"\",\"page\":0,\"limit\":20,\"size\":\"\"}"
+}
+[2025-11-24T04:14:12.310Z] [INFO] QuoteListViewModel > useQuoteListQuery: Starting quote list query {
+  "service": "mvvm-next-mantine",
+  "path": "QuoteListViewModel > useQuoteListQuery",
+  "serializedParam": "{\"q\":\"\",\"page\":0,\"limit\":20,\"size\":\"\"}"
+}
+[2025-11-24T04:18:02.325Z] [INFO] QuoteListViewModel > constructor: ViewModel initialized {
+  "service": "mvvm-next-mantine",
+  "path": "QuoteListViewModel > constructor"
+}
+[2025-11-24T04:18:02.276Z] [INFO] QuoteListViewModel > useQuoteListQuery: Starting quote list query {
+  "service": "mvvm-next-mantine",
+  "path": "QuoteListViewModel > useQuoteListQuery",
+  "serializedParam": "{\"q\":\"\",\"page\":0,\"limit\":20,\"size\":\"\"}"
+}
+[2025-11-24T04:18:06.503Z] [INFO] QuoteListViewModel > useQuoteListQuery: Starting quote list query {
+  "service": "mvvm-next-mantine",
+  "path": "QuoteListViewModel > useQuoteListQuery",
+  "serializedParam": "{\"q\":\"\",\"page\":0,\"limit\":20,\"size\":\"\"}"
+}
+[2025-11-24T04:18:08.055Z] [INFO] QuoteListViewModel > useQuoteListQuery: Starting quote list query {
+  "service": "mvvm-next-mantine",
+  "path": "QuoteListViewModel > useQuoteListQuery",
+  "serializedParam": "{\"q\":\"\",\"page\":0,\"limit\":20,\"size\":\"\"}"
+}
+[2025-11-24T04:18:09.291Z] [INFO] QuoteListViewModel > useQuoteListQuery: Starting quote list query {
+  "service": "mvvm-next-mantine",
+  "path": "QuoteListViewModel > useQuoteListQuery",
+  "serializedParam": "{\"q\":\"\",\"page\":0,\"limit\":20,\"size\":\"\"}"
+}
+[2025-11-24T04:18:10.545Z] [INFO] QuoteListViewModel > useQuoteListQuery: Starting quote list query {
+  "service": "mvvm-next-mantine",
+  "path": "QuoteListViewModel > useQuoteListQuery",
+  "serializedParam": "{\"q\":\"\",\"page\":0,\"limit\":20,\"size\":\"\"}"
+}
+[2025-11-24T04:18:11.755Z] [INFO] QuoteListViewModel > useQuoteListQuery: Starting quote list query {
+  "service": "mvvm-next-mantine",
+  "path": "QuoteListViewModel > useQuoteListQuery",
+  "serializedParam": "{\"q\":\"\",\"page\":0,\"limit\":20,\"size\":\"\"}"
+}
+[2025-11-24T04:18:13.034Z] [INFO] QuoteListViewModel > useQuoteListQuery: Starting quote list query {
+  "service": "mvvm-next-mantine",
+  "path": "QuoteListViewModel > useQuoteListQuery",
+  "serializedParam": "{\"q\":\"\",\"page\":0,\"limit\":20,\"size\":\"\"}"
+}
+[2025-11-24T04:18:14.286Z] [INFO] QuoteListViewModel > useQuoteListQuery: Starting quote list query {
+  "service": "mvvm-next-mantine",
+  "path": "QuoteListViewModel > useQuoteListQuery",
+  "serializedParam": "{\"q\":\"\",\"page\":0,\"limit\":20,\"size\":\"\"}"
+}

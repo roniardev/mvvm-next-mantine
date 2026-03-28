@@ -1,0 +1,15 @@
+{
+    "keep": {
+        "days": true,
+        "amount": 30
+    },
+    "auditLog": "/Users/roni/work/roni/mvvm-next-mantine/logs/.80a57b445008c5920a8f2b6de95b698d190cf1f6-audit.json",
+    "files": [
+        {
+            "date": 1757799638225,
+            "name": "/Users/roni/work/roni/mvvm-next-mantine/logs/09-14-2025.log",
+            "hash": "bc3ac5a7a6b20103a9e233172d0f84596154762cd6504d0c8138ae0c39bf0662"
+        }
+    ],
+    "hashType": "sha256"
+}

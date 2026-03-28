@@ -1,0 +1,16 @@
+[2025-09-13T21:48:08.553Z] [INFO] Final INFO test {
+  "service": "mvvm-next-mantine",
+  "test": "info data"
+}
+[2025-09-13T21:48:08.555Z] [DEBUG] Final DEBUG test {
+  "service": "mvvm-next-mantine",
+  "test": "debug data"
+}
+[2025-09-13T21:48:08.555Z] [WARN] Final WARN test {
+  "service": "mvvm-next-mantine",
+  "test": "warn data"
+}
+[2025-09-13T21:48:08.555Z] [ERROR] Final ERROR test {
+  "service": "mvvm-next-mantine",
+  "test": "error data"
+}

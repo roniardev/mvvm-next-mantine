@@ -6,7 +6,7 @@ import Either from "@/utils/either"
 import ErrorModel from "@/common/models/error-model"
 import Crypto from "@/utils/crypto"
 import GeneralException from "@/utils/exceptions/general-exception"
-import QuoteModel from "../model/quote-model"
+import QuoteModel, { QuoteResponseProps } from "../model/quote-model"
 
 export const getQuoteListRemote = async (param: string): Promise<string> => {
     const path = "QuoteListRemote:getQuoteList"
@@ -29,25 +29,14 @@ export const getQuoteListRemote = async (param: string): Promise<string> => {
             response,
             onSuccess: ({ data }) => {
                 const decryptedJSONData = JSON.parse(JSON.parse(Crypto.decrypt(data as string)))
-                console.log({
-                    decryptedJSONData: decryptedJSONData
-                })
                 const paginatedData = PaginationModel.fromResponse({
                     response: decryptedJSONData,
-                    // biome-ignore lint/suspicious/noExplicitAny: <explanation>
-                    parseData: (data: []) => data.map((item: any) => QuoteModel.fromResponse(item)),
-                })
-
-                console.log({
-                    paginatedData: paginatedData
+                    parseData: (data: QuoteResponseProps[]) => data.map((item: QuoteResponseProps) => QuoteModel.fromResponse(item)),
                 })
 
                 return Either.Right(paginatedData)
             },
             onError: ({ message }) => {
-                console.log({
-                    message: message
-                })
                 return Either.Left(
                     new ErrorModel({
                         path,
@@ -60,11 +49,7 @@ export const getQuoteListRemote = async (param: string): Promise<string> => {
 
         const result = Either.UnwrapEither(customerResponse)
         return Crypto.encrypt(result.stringifyJSON())
-        // biome-ignore lint/suspicious/noExplicitAny: <explanation>
     } catch (error: any) {
-        console.log({
-            error: error
-        })
         const customResponse = Either.Left(
             new ErrorModel({
                 path,

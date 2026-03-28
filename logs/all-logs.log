@@ -1,0 +1,62 @@
+[09-14-2025 04:43:21] [INFO] Logger initialized successfully {
+  "service": "mvvm-next-mantine"
+}
+[09-14-2025 04:43:39] [INFO] Logger initialized successfully {
+  "service": "mvvm-next-mantine"
+}
+[09-14-2025 04:43:58] [INFO] Logger initialized successfully {
+  "service": "mvvm-next-mantine"
+}
+[09-14-2025 04:44:20] [INFO] Logger initialized successfully {
+  "service": "mvvm-next-mantine"
+}
+[09-14-2025 04:44:36] [INFO] Logger initialized successfully {
+  "service": "mvvm-next-mantine"
+}
+[09-14-2025 04:44:52] [INFO] Logger initialized successfully {
+  "service": "mvvm-next-mantine"
+}
+[2025-09-13T21:45:38.872Z] [INFO] Logger initialized successfully {
+  "service": "mvvm-next-mantine"
+}
+[2025-09-13T21:46:26.032Z] [INFO] Logger initialized successfully {
+  "service": "mvvm-next-mantine"
+}
+[2025-09-13T21:46:26.035Z] [INFO] Logger initialized successfully {
+  "service": "mvvm-next-mantine"
+}
+[2025-09-13T21:46:26.035Z] [ERROR] Test ERROR log {
+  "service": "mvvm-next-mantine",
+  "test": "error data"
+}
+[2025-09-13T21:46:44.658Z] [INFO] Logger initialized successfully {
+  "service": "mvvm-next-mantine"
+}
+[2025-09-13T21:46:44.660Z] [INFO] Logger initialized successfully {
+  "service": "mvvm-next-mantine"
+}
+[2025-09-13T21:46:44.660Z] [INFO] Logger initialized successfully {
+  "service": "mvvm-next-mantine"
+}
+[2025-09-13T21:46:44.661Z] [INFO] Logger initialized successfully {
+  "service": "mvvm-next-mantine"
+}
+[2025-09-13T21:46:44.662Z] [INFO] Logger initialized successfully {
+  "service": "mvvm-next-mantine"
+}
+[2025-09-13T21:46:44.662Z] [INFO] Test INFO log {
+  "service": "mvvm-next-mantine",
+  "test": "info data"
+}
+[2025-09-13T21:46:44.662Z] [DEBUG] Test DEBUG log {
+  "service": "mvvm-next-mantine",
+  "test": "debug data"
+}
+[2025-09-13T21:46:44.662Z] [WARN] Test WARN log {
+  "service": "mvvm-next-mantine",
+  "test": "warn data"
+}
+[2025-09-13T21:46:44.662Z] [ERROR] Test ERROR log {
+  "service": "mvvm-next-mantine",
+  "test": "error data"
+}
